@@ -98,7 +98,7 @@ With the command:
 ```gradle
 ./gradlew clean JacocoDebugCodeCoverage
 ```
-A report will be generated at **$rootProjectDir/app/build/reports/jacoco/jacocoTestReport/html/index.html**
+A report will be generated at **$rootProjectDir/app/build/reports/jacoco/JacocoDebugCodeCoverage/html/index.html**
 
 ## Detekt
 Detekt is included as code analysis
@@ -111,7 +111,7 @@ Analysis will be executed and report generated at **$rootProjectDir/app/build/re
 
 Compile & run
 ==============
-Just clone or download code and add youtube api key. You will need to define YOUTUBE_API_KEY in
+Just clone or download code and add youtube api key. You will need to define **YOUTUBE_API_KEY** in
 your **local.properties**
 ```
 YOUTUBE_API_KEY=api_key

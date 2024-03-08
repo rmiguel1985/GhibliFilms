@@ -173,7 +173,7 @@ tasks.withType<Detekt>().configureEach {
 }
 
 coveralls {
-    jacocoReportPath = "${buildDir}/reports/jacoco/jacocoTestReport/jacocoTestReport.xml"
+    jacocoReportPath = "${buildDir}/reports/jacoco/JacocoDebugCodeCoverage/JacocoDebugCodeCoverage.xml"
 }
 
 val exclusions = listOf(
