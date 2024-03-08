@@ -109,6 +109,13 @@ With the command:
 ```
 Analysis will be executed and report generated at **$rootProjectDir/app/build/reports/detekt/detekt-report.html**
 
+Compile & run
+==============
+Just clone or download code and add youtube api key. You will need to define YOUTUBE_API_KEY in
+your **local.properties**
+```
+YOUTUBE_API_KEY=api_key
+```
 
 License
 =====
