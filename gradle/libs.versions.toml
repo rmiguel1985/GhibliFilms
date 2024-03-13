@@ -6,7 +6,7 @@ lifecycle-runtime-ktx = "2.7.0"
 activity-compose = "1.8.2"
 
 # UI libraries
-compose-bom = "2024.02.01"
+compose-bom = "2024.02.02"
 compose-navigation = "2.7.7"
 
 # Android Libraries
@@ -20,19 +20,19 @@ ksp = "1.9.22-1.0.17"
 
 # Test Libraries
 mockk = "1.13.10"
-junit = "5.9.2"
+junit = "5.9.3"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 arch-core-test = "2.2.0"
 turbine = "1.0.0"
-mockWebServer = "4.9.0"
+mockWebServer = "4.10.0"
 
 # Third Party libraries
 coil = "2.6.0"
 leak-canary = "3.0-alpha-1"
 timber = "5.0.1"
 koin-version = "3.5.3"
-youtube = "0.28"
+youtube = "0.29"
 retrofit = "2.9.0"
 okhttp = "4.12.0"
 serialization = "1.5.1"
