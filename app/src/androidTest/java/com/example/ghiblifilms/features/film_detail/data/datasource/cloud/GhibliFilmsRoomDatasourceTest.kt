@@ -61,7 +61,7 @@ class GhibliFilmsRoomDatasourceTest {
             AppDatabase::class.java
         ).build()
         roomDiskDataSource = GhibliFilmsDiskDatasourceImpl(appDatabase.GhibliFilmsDao())
-        mockkObject(ConnectivityHelper)
+
 
         filmsRetrofitDataSourceImpl =
             GhibliFilmsCloudDataSourceImpl(
@@ -96,6 +96,7 @@ class GhibliFilmsRoomDatasourceTest {
     @Test
     fun getGhibliFilms_on_empty_database_returns_null() = runTest {
         //Given
+        mockkObject(ConnectivityHelper)
         every { ConnectivityHelper.isOnline } returns false
 
         //When
@@ -109,6 +110,7 @@ class GhibliFilmsRoomDatasourceTest {
     @Test
     fun getGhibliFilms_with_success_data_from_cloud_saves_it() = runTest(timeout = 60.seconds) {
         //Given
+        mockkObject(ConnectivityHelper)
         every { ConnectivityHelper.isOnline } returns true
         mockWebServer.enqueue(
             MockResponse()
@@ -127,6 +129,7 @@ class GhibliFilmsRoomDatasourceTest {
     @Test
     fun getGhibliFilms_with_saved_cached_data_returns_expected_values() = runTest(timeout = 20.seconds) {
         //Given
+        mockkObject(ConnectivityHelper)
         every { ConnectivityHelper.isOnline } returns true
         mockWebServer.enqueue(
             MockResponse()
