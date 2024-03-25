@@ -1,5 +1,7 @@
 package com.example.ghiblifilms.features.films.ui
 
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.ui.test.hasScrollToIndexAction
 import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -13,6 +15,7 @@ import com.example.ghiblifilms.features.films.ui.view.Content
 import org.junit.Rule
 import org.junit.Test
 
+@OptIn(ExperimentalMaterial3Api::class)
 class GhibliFilmsItemsListTest {
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -34,8 +37,10 @@ class GhibliFilmsItemsListTest {
                 loading = false,
                 filmsList = items,
                 error = "",
+                onTryAgainClick = {},
                 onMediaClick = {},
-                onTryAgainClick = {})
+                pullRefreshState = rememberPullToRefreshState()
+            )
         }
         onNode(hasScrollToIndexAction()).performScrollToIndex(0)
         onNodeWithContentDescription("Title 2").assertExists()
@@ -48,8 +53,10 @@ class GhibliFilmsItemsListTest {
                 loading = false,
                 filmsList = items,
                 error = "",
+                onTryAgainClick = {},
                 onMediaClick = {},
-                onTryAgainClick = {})
+                pullRefreshState = rememberPullToRefreshState()
+            )
         }
         onNode(hasScrollToIndexAction()).performScrollToIndex(0)
         onNodeWithContentDescription("Title 2").performClick()

@@ -40,6 +40,7 @@ android {
             isDebuggable = true
             enableUnitTestCoverage = true
             enableAndroidTestCoverage = true
+            isShrinkResources = false
 
             val key: String = gradleLocalProperties(rootDir).getProperty("YOUTUBE_API_KEY") ?: ""
             buildConfigField("String", "YOUTUBE_API_KEY", "\"$key\"")
@@ -50,6 +51,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            val key: String = gradleLocalProperties(rootDir).getProperty("YOUTUBE_API_KEY") ?: ""
+            buildConfigField("String", "YOUTUBE_API_KEY", "\"$key\"")
         }
     }
     compileOptions {
