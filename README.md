@@ -1,4 +1,4 @@
-# GhibliFilms [![Coverage Status](https://coveralls.io/repos/github/rmiguel1985/GhibliFilms/badge.svg)](https://coveralls.io/github/rmiguel1985/GhibliFilms)
+# GhibliFilms [![Build Status](https://app.bitrise.io/app/5722857c-4db7-4d47-b5a5-2e7ee0e62a6e/status.svg?token=WJoLphygJ4-ozyHZYeTftA&branch=master)](https://app.bitrise.io/app/5722857c-4db7-4d47-b5a5-2e7ee0e62a6e) [![Coverage Status](https://coveralls.io/repos/github/rmiguel1985/GhibliFilms/badge.svg)](https://coveralls.io/github/rmiguel1985/GhibliFilms)
 
 The purpose of this repo is to create an application that tries to
 implement Clean Architecture principles with compose and architecture components in Kotlin.
