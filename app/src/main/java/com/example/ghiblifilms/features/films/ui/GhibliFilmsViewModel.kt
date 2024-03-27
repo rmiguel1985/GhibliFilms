@@ -6,6 +6,7 @@ import com.example.ghiblifilms.features.films.data.datasources.cloud.FilmModel
 import com.example.ghiblifilms.features.films.domain.GetGhibliFilmsUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -22,12 +23,12 @@ class GhibliFilmsViewModel(private val getGhibliFilmsUseCase: GetGhibliFilmsUseC
         viewModelScope.launch {
             _state.value = UiState(loading = true)
             getGhibliFilmsUseCase.execute().fold(
-                onSuccess = {
-                    _state.value = UiState(filmList = it)
+                onSuccess = { filmList ->
+                    _state.update { UiState(filmList = filmList) }
                 },
-                onFailure = {
-                    Timber.e("Error: ${it.message}")
-                    _state.value = UiState(error = it.message ?: "")
+                onFailure = { throwable: Throwable ->
+                    Timber.e("Error: ${throwable.message}")
+                    _state.update { UiState(error = throwable.message ?: "") }
                 }
             )
         }
