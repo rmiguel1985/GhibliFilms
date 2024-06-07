@@ -41,6 +41,8 @@ val FilmDetailModule = module {
 
     single<GetGhibliFilmUseCase> { GetGhibliFilmUseCaseImpl(getGhibliFilmUseCaseImpl = get()) }
 
-    viewModel { GhibliFilmDetailViewModel(savedStateHandle = get(), ghibliFilmUseCaseImpl = get()) }
+    viewModel { (movieId: String) ->
+        GhibliFilmDetailViewModel(movieId = movieId, ghibliFilmUseCaseImpl = get())
+    }
 }
 

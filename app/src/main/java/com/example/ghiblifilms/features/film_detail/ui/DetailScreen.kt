@@ -26,7 +26,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.ghiblifilms.R
 import com.example.ghiblifilms.ui.common.YouTubePlayer
@@ -35,12 +34,11 @@ import com.example.ghiblifilms.ui.common.GhibliFilmsApp
 import com.example.ghiblifilms.ui.theme.padding_50
 import com.example.ghiblifilms.ui.theme.padding_8
 import com.example.ghiblifilms.ui.theme.roundedCorner_10
-import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun DetailScreen(
-    onUpClick: () -> Unit = {},
-    viewModel: GhibliFilmDetailViewModel = koinViewModel()
+    onBack: () -> Unit = {},
+    viewModel: GhibliFilmDetailViewModel
 ) {
     val state by viewModel.state.collectAsState()
 
@@ -49,7 +47,7 @@ fun DetailScreen(
             topBar = {
                 DetailScreenAppBar(
                     title = state.film.title,
-                    onUpClick = onUpClick
+                    onUpClick = onBack
                 )
             }
         ) {

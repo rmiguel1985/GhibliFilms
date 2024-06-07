@@ -1,6 +1,5 @@
 package com.example.ghiblifilms.features.film_detail.ui
 
-import androidx.lifecycle.SavedStateHandle
 import app.cash.turbine.test
 import com.example.ghiblifilms.features.film_detail.domain.GetGhibliFilmUseCase
 import com.example.ghiblifilms.features.film_detail.domain.GetGhibliFilmUseCaseImpl
@@ -51,7 +50,7 @@ class GhibliFilmDetailViewModelTestDispatcher : TestDispatcher() {
             // When
             viewModel =
                 GhibliFilmDetailViewModel(
-                    SavedStateHandle(),
+                    "",
                     useCase
                 )
 
@@ -75,7 +74,7 @@ class GhibliFilmDetailViewModelTestDispatcher : TestDispatcher() {
             // When
             viewModel =
                 GhibliFilmDetailViewModel(
-                    SavedStateHandle(),
+                    "",
                     useCase
                 )
 
