@@ -200,7 +200,9 @@ val exclusions = listOf(
     "**/model/**",
     "**/entities/**",
     "**/MainAppBar*.*",
-    "**/ComposableSingletons*.*"
+    "**/DetailScreenAppBar*.*",
+    "**/ComposableSingletons*.*",
+    "**/Delegate*.*"
 )
 
 tasks.withType(Test::class) {
